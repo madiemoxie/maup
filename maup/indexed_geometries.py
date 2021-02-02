@@ -39,7 +39,7 @@ class IndexedGeometries:
                 target_geometries.items(), len(target_geometries)
             )
         ]
-        assignment = pandas.concat(groups).reindex(self.index)
+        assignment = pandas.concat(groups, ignore_index=True).reindex(self.index)
         return assignment
 
     def enumerate_intersections(self, targets):
